@@ -61,7 +61,7 @@ export default {
 .home {
   padding: $navbarHeight 0 0;
   width: 100%;
-  background-image: url('/home.jpg');
+  background-image: url('../public/home.jpg');
   height: 100vh - $navbarHeight - 2.3;
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -110,7 +110,7 @@ export default {
 
 @media (max-width: $MQMobile) {
   .home {
-    background-image: url('/home-mobile.jpg');
+    background-image: url('../public/home-mobile.jpg');
 
     .per-logo {
       margin: 10px !important;

@@ -37,7 +37,7 @@
           </span>
         </p>
         <p>
-          <img style="width: 20px; height: 20px" src=" /beian.png" alt="备案" />
+          <img style="width: 20px; height: 20px" src="../public/beian.png" alt="备案" />
           <a
             href="http://www.beian.miit.gov.cn"
             target="_blank"

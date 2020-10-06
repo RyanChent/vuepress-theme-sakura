@@ -125,7 +125,7 @@ export default {
       //处理目录的滚动
       if (!this.botui) {
         //加载机器人
-        this.botui = this.$loadScript("/js/botui.js");
+        this.botui = this.$loadScript("../public/js/botui.js");
       }
       window.addEventListener("mousemove", this.handleNavbarShow, true);
     },

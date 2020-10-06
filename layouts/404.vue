@@ -70,20 +70,20 @@ export default {
     init() {
       if (!this.jqueryMin) {
         this.jqueryMin = this.$loadScript(
-          "/error/assets/js/jquery.min.js",
+          "../public/error/assets/js/jquery.min.js",
           false
         );
       }
       if (!this.skelMin) {
-        this.skelMin = this.$loadScript("/error/assets/js/skel.min.js", false);
+        this.skelMin = this.$loadScript("../public/error/assets/js/skel.min.js", false);
       }
 
       if (!this.utilJs) {
-        this.utilJs = this.$loadScript("/error/assets/js/util.js", false);
+        this.utilJs = this.$loadScript("../public/error/assets/js/util.js", false);
       }
 
       if (!this.mainJs) {
-        this.mainJs = this.$loadScript("/error/assets/js/main.js", false);
+        this.mainJs = this.$loadScript("../public/error/assets/js/main.js", false);
       }
     },
   },
@@ -91,6 +91,6 @@ export default {
 </script>
 
 <style scoped>
-@import url("/error/assets/css/main.css");
-@import url("/error/assets/css/noscript.css");
+@import url("../public/error/assets/css/main.css");
+@import url("../public/error/assets/css/noscript.css");
 </style>

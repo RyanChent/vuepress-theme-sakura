@@ -3,7 +3,7 @@
  */
 import { Button, Switch, Card, Image, Pagination, Icon, Autocomplete, Timeline, TimelineItem, Backtop, Carousel, CarouselItem } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-import * as Tool from "./theme/util/tool";
+import * as Tool from "./util/tool";
 export default ({ Vue, options, router, siteData }) => {
     // ...做一些其他的应用级别的优化
     Vue.use(Button)

@@ -1,15 +1,14 @@
 {
     "name": "vuepress-theme-sakura",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "vuepress blog theme which name is sakura",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "vuepress dev docs --temp .temp  --port=8000",
-        "build": "vuepress build docs",
-        "deploy": " ./deploy.sh"
+        "build": "vuepress build docs"
     },
-    "keywords": [],
+    "keywords": ["vuepress-theme-sakura", "sakura", "hexo-theme-sakura"],
     "author": "Jin GaYe",
     "license": "MIT",
     "dependencies": {
@@ -34,10 +33,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/RyanChent/my-vuepress-blog.git"
+        "url": "git+https://github.com/RyanChent/vuepress-theme-sakura.git"
     },
     "bugs": {
-        "url": "https://github.com/RyanChent/my-vuepress-blog/issues"
+        "url": "https://github.com/RyanChent/vuepress-theme-sakura/issues"
     },
-    "homepage": "https://github.com/RyanChent/my-vuepress-blog#readme"
+    "homepage": "https://github.com/RyanChent/vuepress-theme-sakura#readme"
 }

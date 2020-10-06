@@ -1,0 +1,12 @@
+/node_modules
+/.temp
+deploy.sh
+yarn.lock
+package-lock.json
+/docs/.vuepress/config.js
+/docs/.vuepress/public/jinan-code
+/docs/.vuepress/public/favicon.ico
+/docs/.vuepress/public/manifest.json
+/docs/.vuepress/public/sogousiteverification.txt
+/docs/.vuepress/public/naver3d6a6ca0fde19be0d450d3dba11d6661.html
+/docs/.vuepress/public/iconfont.css

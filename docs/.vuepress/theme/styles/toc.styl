@@ -1,0 +1,39 @@
+.table-of-contents
+    &::before 
+        content '目录'
+        position relative
+        left 50%
+        transform: translateX(-70%)
+    max-height 350px
+    overflow hidden auto
+    max-width 270px
+    position absolute
+    top $navbarHeight * 8.5
+    left 15vw
+    transition all 0.5s
+    ul
+      margin 0
+      list-style-type none
+    li 
+      width 100%
+    a
+      overflow hidden
+      white-space nowrap
+      text-overflow ellipsis
+   .badge
+     vertical-align middle
+
+.absolute-layout 
+    position absolute
+    top $navbarHeight * 8.5
+    left 15vw
+
+.fixed-layout
+    position fixed
+    top $navbarHeight * 1.5
+    left 15vw
+
+@media (max-width: calc(1920px * 0.85))
+    .table-of-contents
+        position static
+        max-width 100%

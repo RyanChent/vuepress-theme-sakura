@@ -36,10 +36,10 @@
 </template>
 
 <script>
-import AiSearch from '@theme/components/AISearch.vue';
-import SidebarButton from '@theme/components/SidebarButton.vue';
-import NavLinks from '@theme/components/NavLinks.vue';
-import Mode from '@theme/components/DarkMode';
+import AiSearch from './AISearch.vue';
+import SidebarButton from './SidebarButton.vue';
+import NavLinks from './NavLinks.vue';
+import Mode from './DarkMode';
 
 export default {
   name: 'Navbar',

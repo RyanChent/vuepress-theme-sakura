@@ -9,7 +9,7 @@
     <div id="scrollPath" v-if="!$page.frontmatter.home" />
     <Navbar
       v-if="shouldShowNavbar"
-      :style="{opacity: Number(showNavbar)}"
+      :style="{ opacity: Number(showNavbar) }"
       @toggle-sidebar="toggleSidebar"
     />
 
@@ -32,14 +32,14 @@
 </template>
 
 <script>
-import Home from '@theme/components/Home.vue';
-import Navbar from '@theme/components/Navbar.vue';
-import Page from '@theme/components/Page.vue';
-import Sidebar from '@theme/components/Sidebar.vue';
-import {resolveSidebarItems} from '../util';
-import Footer from '@theme/components/Footer.vue';
+import Home from "../theme-components/Home.vue";
+import Navbar from "../theme-components/Navbar.vue";
+import Page from "../theme-components/Page.vue";
+import Sidebar from "../theme-components/Sidebar.vue";
+import { resolveSidebarItems } from "../util";
+import Footer from "../theme-components/Footer.vue";
 export default {
-  name: 'Layout',
+  name: "Layout",
 
   components: {
     Home,
@@ -61,8 +61,8 @@ export default {
 
   computed: {
     shouldShowNavbar() {
-      const {themeConfig} = this.$site;
-      const {frontmatter} = this.$page;
+      const { themeConfig } = this.$site;
+      const { frontmatter } = this.$page;
       if (frontmatter.navbar === false || themeConfig.navbar === false) {
         return false;
       }
@@ -76,7 +76,7 @@ export default {
     },
 
     shouldShowSidebar() {
-      const {frontmatter} = this.$page;
+      const { frontmatter } = this.$page;
       return (
         !frontmatter.home &&
         frontmatter.sidebar !== false &&
@@ -97,9 +97,9 @@ export default {
       const userPageClass = this.$page.frontmatter.pageClass;
       return [
         {
-          'no-navbar': !this.shouldShowNavbar,
-          'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar,
+          "no-navbar": !this.shouldShowNavbar,
+          "sidebar-open": this.isSidebarOpen,
+          "no-sidebar": !this.shouldShowSidebar,
         },
         userPageClass,
       ];
@@ -118,16 +118,16 @@ export default {
   },
   methods: {
     initLayout() {
-      const pageTop = document.getElementsByClassName('page-top')[0];
+      const pageTop = document.getElementsByClassName("page-top")[0];
       this.scrollHeight = pageTop
         ? pageTop.offsetHeight
-        : 0 + document.getElementsByTagName('header')[0].offsetHeight;
+        : 0 + document.getElementsByTagName("header")[0].offsetHeight;
       //处理目录的滚动
       if (!this.botui) {
         //加载机器人
-        this.botui = this.$loadScript('/js/botui.js');
+        this.botui = this.$loadScript("/js/botui.js");
       }
-      window.addEventListener('mousemove', this.handleNavbarShow, true);
+      window.addEventListener("mousemove", this.handleNavbarShow, true);
     },
 
     handleNavbarShow() {
@@ -139,8 +139,8 @@ export default {
     },
 
     toggleSidebar(to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen;
-      this.$emit('toggle-sidebar', this.isSidebarOpen);
+      this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
+      this.$emit("toggle-sidebar", this.isSidebarOpen);
     },
 
     // side swipe
@@ -164,7 +164,7 @@ export default {
     },
   },
   beforeDestroy() {
-    window.removeEventListener('mousemove', this.handleNavbarShow, true);
+    window.removeEventListener("mousemove", this.handleNavbarShow, true);
   },
 };
 </script>

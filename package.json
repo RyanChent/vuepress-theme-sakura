@@ -11,6 +11,7 @@
     "keywords": ["vuepress-theme-sakura", "sakura", "hexo-theme-sakura"],
     "author": "Jin GaYe",
     "license": "MIT",
+    "publishConfig": { "registry": "https://npm.pkg.github.com/" },
     "dependencies": {
         "autoprefixer": "^9.8.6",
         "botui": "^0.3.9",

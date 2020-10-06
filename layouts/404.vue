@@ -18,9 +18,7 @@
         <nav>
           <ul>
             <li>
-              <a href="https://jarrychen.cn" style="text-decoration: none"
-                >首页</a
-              >
+              <a href="/" style="text-decoration: none">首页</a>
             </li>
             <li>
               <a
@@ -28,13 +26,6 @@
                 style="text-decoration: none"
                 target="_blank"
                 >联系</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://jarrychen.cn/about/me.html"
-                style="text-decoration: none"
-                >关于</a
               >
             </li>
           </ul>
@@ -75,15 +66,24 @@ export default {
         );
       }
       if (!this.skelMin) {
-        this.skelMin = this.$loadScript("../public/error/assets/js/skel.min.js", false);
+        this.skelMin = this.$loadScript(
+          "../public/error/assets/js/skel.min.js",
+          false
+        );
       }
 
       if (!this.utilJs) {
-        this.utilJs = this.$loadScript("../public/error/assets/js/util.js", false);
+        this.utilJs = this.$loadScript(
+          "../public/error/assets/js/util.js",
+          false
+        );
       }
 
       if (!this.mainJs) {
-        this.mainJs = this.$loadScript("../public/error/assets/js/main.js", false);
+        this.mainJs = this.$loadScript(
+          "../public/error/assets/js/main.js",
+          false
+        );
       }
     },
   },

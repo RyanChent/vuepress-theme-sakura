@@ -28,8 +28,8 @@
           : {}
       "
     >
-      <Mode />
-      <AiSearch />
+      <Mode v-if="themeConfig.mode" />
+      <AiSearch v-if="themeConfig.aiSearch" />
       <NavLinks class="can-hide" />
     </div>
   </header>
@@ -56,7 +56,11 @@ export default {
       linksWrapMaxWidth: null,
     };
   },
-
+  computed: {
+    themeConfig() {
+      return this.$site.themeConfig;
+    },
+  },
   mounted() {
     const MOBILE_DESKTOP_BREAKPOINT = 719; // refer to config.styl
     const NAVBAR_VERTICAL_PADDING =

@@ -123,9 +123,11 @@ export default {
         ? pageTop.offsetHeight
         : 0 + document.getElementsByTagName("header")[0].offsetHeight;
       //处理目录的滚动
-      if (!this.botui) {
-        //加载机器人
-        this.botui = this.$loadScript("../public/js/botui.js");
+      if (this.$site.themeConfig.botui) {
+        if (!this.botui) {
+          //加载机器人
+          this.botui = this.$loadScript(this.$site.themeConfig.botui);
+        }
       }
       window.addEventListener("mousemove", this.handleNavbarShow, true);
     },

@@ -24,7 +24,12 @@ export default {
     config() {
       return {
         url: this.url,
-        disabled: ['diandian', 'douban', 'tencent', 'google'],
+        disabled: this.$site.themeConfig.postShare.disabled || [
+          "diandian",
+          "douban",
+          "tencent",
+          "google",
+        ],
       };
     },
   },

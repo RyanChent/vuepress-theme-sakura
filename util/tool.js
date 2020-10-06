@@ -1,9 +1,9 @@
 // 处理复制函数
-const addCopy = (e) => {
+const addCopy = (e, author='JarryChen') => {
     e.preventDefault()
     let copyTxt = ''
     copyTxt = window.getSelection(0).toString()
-    copyTxt = `${copyTxt}\n作者：JarryChen\n原文：${window.location.href}\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。`
+    copyTxt = `${copyTxt}\n作者：${author}\n原文：${window.location.href}\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。`
     const clipboardData = e.clipboardData || window.clipboardData
     clipboardData.setData('text', copyTxt)
 }
@@ -69,12 +69,12 @@ export function parseTime(time, cFormat) {
 }
 
 // 复制内容工具函数
-export function copy() {
+export function copy(author) {
     document.addEventListener('cut', e => {
-        addCopy(e)
+        addCopy(e, author)
     })
     document.addEventListener('copy', e => {
-        addCopy(e)
+        addCopy(e, author)
     })
 }
 

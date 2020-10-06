@@ -12,7 +12,7 @@
     </section>
     <PageEdit />
     <PageNav v-bind="{ sidebarItems }" />
-    <RightOptions :url="$page.frontmatter.path" v-if="$page.frontmatter.post" />
+    <RightOptions :url="$page.frontmatter.path" v-if="$page.frontmatter.post && $site.themeConfig.postShare" />
     <Comments v-if="$page.frontmatter.comments" />
   </main>
 </template>

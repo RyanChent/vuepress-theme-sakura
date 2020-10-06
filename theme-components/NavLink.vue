@@ -23,10 +23,10 @@
 </template>
 
 <script>
-import {isExternal, isMailto, isTel, ensureExt} from '../util';
+import { isExternal, isMailto, isTel, ensureExt } from "../util";
 
 export default {
-  name: 'NavLink',
+  name: "NavLink",
 
   props: {
     item: {
@@ -42,10 +42,10 @@ export default {
     exact() {
       if (this.$site.locales) {
         return Object.keys(this.$site.locales).some(
-          rootLink => rootLink === this.link
+          (rootLink) => rootLink === this.link
         );
       }
-      return this.link === '/';
+      return this.link === "/";
     },
 
     isNonHttpURI() {
@@ -53,7 +53,7 @@ export default {
     },
 
     isBlankTarget() {
-      return this.target === '_blank';
+      return this.target === "_blank";
     },
 
     isInternal() {
@@ -67,7 +67,7 @@ export default {
       if (this.item.target) {
         return this.item.target;
       }
-      return isExternal(this.link) ? '_blank' : '';
+      return isExternal(this.link) ? "_blank" : "";
     },
 
     rel() {
@@ -80,21 +80,23 @@ export default {
       if (this.item.rel) {
         return this.item.rel;
       }
-      return this.isBlankTarget ? 'noopener noreferrer' : null;
+      return this.isBlankTarget ? "noopener noreferrer" : null;
     },
   },
 
   methods: {
     focusoutAction() {
-      this.$emit('focusout');
+      this.$emit("focusout");
     },
   },
 };
 </script>
 
 <style lang="stylus">
-.nav-link
-    .iconfont
-        color rgba(70, 189, 135, 0.6)
-        margin 0 2px
+.nav-link {
+  .iconfont {
+    color: rgba(70, 189, 135, 0.6);
+    margin: 0 2px;
+  }
+}
 </style>

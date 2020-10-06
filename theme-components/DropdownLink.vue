@@ -52,8 +52,8 @@
 </template>
 
 <script>
-import NavLink from './NavLink.vue';
-import DropdownTransition from './DropdownTransition.vue';
+import NavLink from '@theme/components/NavLink.vue';
+import DropdownTransition from '@theme/components/DropdownTransition.vue';
 import last from 'lodash/last';
 
 export default {

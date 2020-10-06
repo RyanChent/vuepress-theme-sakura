@@ -11,21 +11,21 @@
       <Content class="theme-default-content" ref="article" />
     </section>
     <PageEdit />
-    <PageNav v-bind="{sidebarItems}" />
+    <PageNav v-bind="{ sidebarItems }" />
     <RightOptions :url="$page.frontmatter.path" v-if="$page.frontmatter.post" />
     <Comments v-if="$page.frontmatter.comments" />
   </main>
 </template>
 
 <script>
-import PageEdit from '@theme/components/PageEdit.vue';
-import PageNav from '@theme/components/PageNav.vue';
-import Comments from '@theme/components/Comments.vue';
-import PageTop from '@theme/components/PageTop.vue';
-import RightOptions from '@theme/components/RightOption.vue';
+import PageEdit from "./PageEdit.vue";
+import PageNav from "./PageNav.vue";
+import Comments from "./Comments.vue";
+import PageTop from "./PageTop.vue";
+import RightOptions from "./RightOption.vue";
 export default {
-  components: {PageEdit, PageNav, Comments, PageTop, RightOptions},
-  props: ['sidebarItems'],
+  components: { PageEdit, PageNav, Comments, PageTop, RightOptions },
+  props: ["sidebarItems"],
   data() {
     return {
       scrollHeight: null,
@@ -38,32 +38,32 @@ export default {
   },
   computed: {
     pageSize() {
-      const {frontmatter} = this.$page;
+      const { frontmatter } = this.$page;
       return frontmatter.pageSize || 1;
     },
   },
   methods: {
     init() {
-      const pageTop = document.getElementsByClassName('page-top')[0];
+      const pageTop = document.getElementsByClassName("page-top")[0];
       this.scrollHeight = pageTop
         ? pageTop.offsetHeight
-        : 0 + document.getElementsByTagName('header')[0].offsetHeight;
+        : 0 + document.getElementsByTagName("header")[0].offsetHeight;
       this.$handleScrollBar(this.scrollHeight);
     },
 
     bindClickOnToc() {
-      const toc = document.getElementsByClassName('table-of-contents');
+      const toc = document.getElementsByClassName("table-of-contents");
       this.carousel = this.$refs.article.$el.getElementsByClassName(
-        'el-carousel'
+        "el-carousel"
       );
       if (this.carousel && this.carousel[0]) {
-        const ALIST = toc[0].getElementsByTagName('a');
+        const ALIST = toc[0].getElementsByTagName("a");
         for (const tag of ALIST) {
-          tag.href = 'javascript:void(0)';
+          tag.href = "javascript:void(0)";
         }
       }
       if (toc && toc[0]) {
-        toc[0].onclick = e => {
+        toc[0].onclick = (e) => {
           const index = parseInt(e.target.text);
           if (this.carousel[0] && !isNaN(index)) {
             this.carousel[0].__vue__.setActiveItem(
@@ -130,16 +130,23 @@ export default {
 </script>
 
 <style lang="stylus">
-@require '../styles/wrapper.styl'
+@require '../styles/wrapper.styl';
 
-.page
-  padding-bottom 2rem
-  display block
-  .el-carousel
-    min-height 100vh
-    .el-carousel__item
-        overflow hidden auto
-  table
-    width 100%
-    table-layout fixed
+.page {
+  padding-bottom: 2rem;
+  display: block;
+
+  .el-carousel {
+    min-height: 100vh;
+
+    .el-carousel__item {
+      overflow: hidden auto;
+    }
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+}
 </style>

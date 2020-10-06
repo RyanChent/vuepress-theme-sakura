@@ -25,11 +25,11 @@
 
 <script>
 export default {
-  name: 'BlogTimeline',
+  name: "BlogTimeline",
   computed: {
     pages() {
-      const {pages} = this.$site;
-      const unsortPage = pages.filter(page => {
+      const { pages } = this.$site;
+      const unsortPage = pages.filter((page) => {
         page.frontmatter.date = this.$parseTime(page.frontmatter.date);
         return page.frontmatter.post;
       });
@@ -43,7 +43,9 @@ export default {
 </script>
 
 <style lang="stylus">
-.blog-timeline
-  .el-timeline-item__wrapper
-    top -8px
+.blog-timeline {
+  .el-timeline-item__wrapper {
+    top: -8px;
+  }
+}
 </style>

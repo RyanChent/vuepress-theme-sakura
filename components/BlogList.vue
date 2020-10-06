@@ -27,7 +27,7 @@
               fit="cover"
               style="width: 100%"
               :alt="`文章图${index}`"
-              :style="{height: index % 6 == 0 ? 'calc(60vh - 50px)' : '20vh'}"
+              :style="{ height: index % 6 == 0 ? 'calc(60vh - 50px)' : '20vh' }"
             />
           </p>
         </component>
@@ -66,7 +66,7 @@
 
 <script>
 export default {
-  name: 'BlogList',
+  name: "BlogList",
   data() {
     return {
       pageSize: 12,
@@ -82,17 +82,17 @@ export default {
     },
 
     pages() {
-      const {pages} = this.$site;
+      const { pages } = this.$site;
       return pages
         .filter(
-          page =>
+          (page) =>
             page.frontmatter.post && page.frontmatter.categories === this.kind
         )
         .sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1))
-        .map(page => {
-          console.log(page)
+        .map((page) => {
+          console.log(page);
           page.frontmatter.date = this.$parseTime(page.frontmatter.date);
-          page.component = page.frontmatter.mathjax ? 'a' : 'router-link';
+          page.component = page.frontmatter.mathjax ? "a" : "router-link";
           return page;
         });
     },
@@ -106,10 +106,10 @@ export default {
       this.pageSize = 12;
       this.total = this.pages.length;
       this.pagesPer = this.pages.slice(0, this.pageSize);
-      const pageTop = document.getElementsByClassName('page-top')[0];
+      const pageTop = document.getElementsByClassName("page-top")[0];
       this.scrollHeight = pageTop
         ? pageTop.offsetHeight
-        : 0 + document.getElementsByTagName('header')[0].offsetHeight;
+        : 0 + document.getElementsByTagName("header")[0].offsetHeight;
       this.$handleScrollBar(this.scrollHeight);
     },
 
@@ -120,17 +120,17 @@ export default {
     },
 
     gridMode(index) {
-      let style = '';
+      let style = "";
       if (index % 6 === 0) {
         const times6 = index / 6;
         style += `grid-row: ${3 * times6 + 1} / ${3 * (times6 + 1)};`;
         if (times6 % 2 === 0) {
           style += `${
-            this.pageIndex % 2 === 0 ? 'grid-column: 1/3' : 'grid-column: 2/4'
+            this.pageIndex % 2 === 0 ? "grid-column: 1/3" : "grid-column: 2/4"
           }`;
         } else {
           style += `${
-            this.pageIndex % 2 === 0 ? 'grid-column: 2/4' : 'grid-column: 1/3'
+            this.pageIndex % 2 === 0 ? "grid-column: 2/4" : "grid-column: 1/3"
           }`;
         }
       }

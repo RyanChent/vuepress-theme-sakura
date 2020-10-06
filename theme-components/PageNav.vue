@@ -42,14 +42,14 @@
 </template>
 
 <script>
-import {resolvePage} from '../util';
-import isString from 'lodash/isString';
-import isNil from 'lodash/isNil';
+import { resolvePage } from "../util";
+import isString from "lodash/isString";
+import isNil from "lodash/isNil";
 
 export default {
-  name: 'PageNav',
+  name: "PageNav",
 
-  props: ['sidebarItems'],
+  props: ["sidebarItems"],
 
   computed: {
     prev() {
@@ -73,21 +73,21 @@ function resolveNext(page, items) {
 const LINK_TYPES = {
   NEXT: {
     resolveLink: resolveNext,
-    getThemeLinkConfig: ({nextLinks}) => nextLinks,
-    getPageLinkConfig: ({frontmatter}) => frontmatter.next,
+    getThemeLinkConfig: ({ nextLinks }) => nextLinks,
+    getPageLinkConfig: ({ frontmatter }) => frontmatter.next,
   },
   PREV: {
     resolveLink: resolvePrev,
-    getThemeLinkConfig: ({prevLinks}) => prevLinks,
-    getPageLinkConfig: ({frontmatter}) => frontmatter.prev,
+    getThemeLinkConfig: ({ prevLinks }) => prevLinks,
+    getPageLinkConfig: ({ frontmatter }) => frontmatter.prev,
   },
 };
 
 function resolvePageLink(
   linkType,
-  {$themeConfig, $page, $route, $site, sidebarItems}
+  { $themeConfig, $page, $route, $site, sidebarItems }
 ) {
-  const {resolveLink, getThemeLinkConfig, getPageLinkConfig} = linkType;
+  const { resolveLink, getThemeLinkConfig, getPageLinkConfig } = linkType;
 
   // Get link config from theme
   const themeLinkConfig = getThemeLinkConfig($themeConfig);
@@ -112,7 +112,7 @@ function find(page, items, offset) {
   flatten(items, res);
   for (let i = 0; i < res.length; i++) {
     const cur = res[i];
-    if (cur.type === 'page' && cur.path === decodeURIComponent(page.path)) {
+    if (cur.type === "page" && cur.path === decodeURIComponent(page.path)) {
       return res[i + offset];
     }
   }
@@ -120,7 +120,7 @@ function find(page, items, offset) {
 
 function flatten(items, res) {
   for (let i = 0, l = items.length; i < l; i++) {
-    if (items[i].type === 'group') {
+    if (items[i].type === "group") {
       flatten(items[i].children || [], res);
     } else {
       res.push(items[i]);
@@ -130,18 +130,23 @@ function flatten(items, res) {
 </script>
 
 <style lang="stylus">
-@require '../styles/wrapper.styl'
+@require '../styles/wrapper.styl';
 
-.page-nav
-  @extend $wrapper
-  padding-top 1rem
-  padding-bottom 0
-  .inner
-    min-height 2rem
-    margin-top 0
-    border-top 1px solid $borderColor
-    padding-top 1rem
-    overflow auto // clear float
-  .next
-    float right
+.page-nav {
+  @extend $wrapper;
+  padding-top: 1rem;
+  padding-bottom: 0;
+
+  .inner {
+    min-height: 2rem;
+    margin-top: 0;
+    border-top: 1px solid $borderColor;
+    padding-top: 1rem;
+    overflow: auto; // clear float
+  }
+
+  .next {
+    float: right;
+  }
+}
 </style>

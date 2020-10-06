@@ -1,0 +1,13 @@
+{
+    "name": "JarryChen's Blog",
+    "short_name": "JR's  Blog",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#3eaf7c",
+    "icons": [{
+        "src": "/favicon.ico",
+        "sizes": "120x120",
+        "type": "image/png"
+    }]
+}

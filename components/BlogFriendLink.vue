@@ -58,7 +58,7 @@
 
 <script>
 export default {
-  name: 'BlogFriendLink',
+  name: "BlogFriendLink",
   computed: {
     page() {
       return this.$page.frontmatter;
@@ -68,130 +68,175 @@ export default {
 </script>
 
 <style lang="stylus">
-#content
-    animation main 1s
-    position relative
-.site-content
-    &:before,&:after
-        content ''
-        display table
-        table-layout fixed
-    &:after
-        clear both
-    .hentry
-        margin 0 0 1.5rem
-        .links
-          margin-bottom 50px
-          .link-title
-            font-weight 400
-            color #6d6d6d
-            padding-left 0
-            border-left 0
-            margin 50px 0 20px
-            .fake-title
-                padding-left 10px
-                border-left 3px solid orange
-          ul
-            margin: 0
-            list-style: none
-            padding: 0
-            width: 100%
-            display: inline-block
-            li
-                .link-item-inner
-                    text-decoration none
-                &:hover
-                    .linkdes
-                        border-top 1px dashed #fff
-                    &:before
-                        width 180%
-                    color #27323a
-                    border 1px solid orange
-                &:before
-                    content: "";
-                    background-color: orange;
-                    -webkit-transform: skew(45deg, 0);
-                    transform: skew(45deg, 0);
-                    width: 0;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    left: -60px;
-                    z-index: -1;
-                    -webkit-transition: all .5s;
-                    transition: all .5s
-                width: 32%
-                float: left
-                border: 1px solid #ececec
-                padding: 10px 30px
-                margin: 4px 4px
-                position: relative
-                overflow: hidden
-                -webkit-transition: all .3s
-                transition: all .3s
-                border-radius: 10px
-                .sitename
-                    color: orange
-                    padding-bottom: 10px
-                    display: block
-                    -webkit-transition: all .3s
-                    transition: all .3s
-                    overflow: hidden
-                    text-overflow: ellipsis
-                    -o-text-overflow: ellipsis
-                    white-space: nowrap
-                .linkdes
-                    color: #949494
-                    font-size: 13px
-                    padding: 10px 0
-                    border-top: 1px dashed #ddd
-                    text-overflow: ellipsis
-                    overflow: hidden
-                    white-space: nowrap
-                    line-height: 25px
-                    -webkit-transition: all .5s
-                    transition: all .5s
-                &:hover
-                    img
-                        transform: rotate(360deg)
-                        -webkit-transform: rotate(360deg)
-                        -moz-transform: rotate(360deg)
-                        -o-transform: rotate(360deg)
-                        -ms-transform: rotate(360deg)
-                img
-                    float: right
-                    box-shadow: inset 0 0 10px #000
-                    padding: 5px
-                    opacity: 1
-                    transform: rotate(0deg)
-                    -webkit-transform: rotate(0deg)
-                    -moz-transform: rotate(0deg)
-                    -o-transform: rotate(0deg)
-                    -ms-transform: rotate(0deg)
-                    transition: all ease 1s
-                    -webkit-transition: all ease 1s
-                    -moz-transition: all ease 1s
-                    -o-transition: all ease 1s
-                    margin-top: 5px
-                    width: 65px
-                    height: 65px
-                    padding: 2px
-                    border-radius: 100%
-    max-width $contentWidth
-    padding 0 10px
-    margin 0 auto
-    background-color rgba(255, 255, 255, .8)
+#content {
+  animation: main 1s;
+  position: relative;
+}
 
-@media (max-width: $MQMobile)
-    .site-content
-        li
-            width 70%
+.site-content {
+  &:before, &:after {
+    content: '';
+    display: table;
+    table-layout: fixed;
+  }
 
-@keyframes main
-    0%
-        opacity 0
-        transform translateY(50px)
-    100%
-        opacity 1
-        transform translateY(0)
+  &:after {
+    clear: both;
+  }
+
+  .hentry {
+    margin: 0 0 1.5rem;
+
+    .links {
+      margin-bottom: 50px;
+
+      .link-title {
+        font-weight: 400;
+        color: #6d6d6d;
+        padding-left: 0;
+        border-left: 0;
+        margin: 50px 0 20px;
+
+        .fake-title {
+          padding-left: 10px;
+          border-left: 3px solid orange;
+        }
+      }
+
+      ul {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        display: inline-block;
+
+        li {
+          .link-item-inner {
+            text-decoration: none;
+          }
+
+          &:hover {
+            .linkdes {
+              border-top: 1px dashed #fff;
+            }
+
+            &:before {
+              width: 180%;
+            }
+
+            color: #27323a;
+            border: 1px solid orange;
+          }
+
+          &:before {
+            content: '';
+            background-color: orange;
+            -webkit-transform: skew(45deg, 0);
+            transform: skew(45deg, 0);
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -60px;
+            z-index: -1;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+          }
+
+          width: 32%;
+          float: left;
+          border: 1px solid #ececec;
+          padding: 10px 30px;
+          margin: 4px 4px;
+          position: relative;
+          overflow: hidden;
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+          border-radius: 10px;
+
+          .sitename {
+            color: orange;
+            padding-bottom: 10px;
+            display: block;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          .linkdes {
+            color: #949494;
+            font-size: 13px;
+            padding: 10px 0;
+            border-top: 1px dashed #ddd;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            line-height: 25px;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+          }
+
+          &:hover {
+            img {
+              transform: rotate(360deg);
+              -webkit-transform: rotate(360deg);
+              -moz-transform: rotate(360deg);
+              -o-transform: rotate(360deg);
+              -ms-transform: rotate(360deg);
+            }
+          }
+
+          img {
+            float: right;
+            box-shadow: inset 0 0 10px #000;
+            padding: 5px;
+            opacity: 1;
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transition: all ease 1s;
+            -webkit-transition: all ease 1s;
+            -moz-transition: all ease 1s;
+            -o-transition: all ease 1s;
+            margin-top: 5px;
+            width: 65px;
+            height: 65px;
+            padding: 2px;
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  max-width: $contentWidth;
+  padding: 0 10px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: $MQMobile) {
+  .site-content {
+    li {
+      width: 70%;
+    }
+  }
+}
+
+@keyframes main {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>

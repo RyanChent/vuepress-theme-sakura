@@ -1,6 +1,6 @@
 {
     "name": "vuepress-theme-sakura",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "vuepress blog theme which name is sakura",
     "main": "index.js",
     "scripts": {
